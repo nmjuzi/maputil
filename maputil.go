@@ -28,7 +28,7 @@ func (s *UniqMap) AddNotContains(key string) bool {
 	}
 }
 
-func (s *UniqMap) clear() {
+func (s *UniqMap) Clear() {
 	s.Lock()
 	defer s.Unlock()
 	s.m = make(map[string]bool)
