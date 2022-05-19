@@ -33,3 +33,9 @@ func (s *UniqMap) Clear() {
 	defer s.Unlock()
 	s.m = make(map[string]bool)
 }
+
+func (s *UniqMap) Remove(key string) {
+	s.Lock()
+	defer s.Unlock()
+	delete(s.m, key)
+}
